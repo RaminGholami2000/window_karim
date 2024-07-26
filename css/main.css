@@ -1,0 +1,58 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.parent{
+    width: 250px;
+    height: 250px;
+   background-image: url('../images/war-games-1920-x-1080-wallpaper-av9jv08mccx2dglk.jpg');
+   background-size: cover;
+   background-position: center;
+    margin: 100px auto;
+    position: relative;
+    perspective: 800px;
+    &::before, &::after{
+        content: "";
+        width: 50%;
+        height: 100%;
+        background-color: deeppink;
+        display: inline-block;
+        border-right: 1px solid black;
+        position: absolute;
+        left: 0;
+        top: 0;
+        transition: 300ms;
+        -webkit-transition: 300ms;
+        -moz-transition: 300ms;
+        -ms-transition: 300ms;
+        -o-transition: 300ms;
+        transform-origin: 0% 50%;
+}
+    &::after{
+        content: "";
+        left: unset;
+        right: 0;
+        border-right: unset;
+        border-left: 1px solid black;
+        transform-origin: right center;
+
+    }
+    &:hover{
+    &::before{
+        transform: rotateY(-90deg);
+        -webkit-transform: rotateY(-90deg);
+        -moz-transform: rotateY(-90deg);
+        -ms-transform: rotateY(-90deg);
+        -o-transform: rotateY(-90deg);
+}
+&::after{
+    transform: rotateY(90deg);
+    -webkit-transform: rotateY(90deg);
+    -moz-transform: rotateY(90deg);
+    -ms-transform: rotateY(90deg);
+    -o-transform: rotateY(90deg);
+}
+}
+
+}
